@@ -48,8 +48,8 @@ function createPokemon(data) {
 }
 
 // Fetch pokemon
-function fetchPokemon(pokeId) {
-    fetch(`https://pokeapi.co/api/v2/pokemon/${pokeId}`)
+async function fetchPokemon(pokeId) {
+    await fetch(`https://pokeapi.co/api/v2/pokemon/${pokeId}`)
       .then((responde) => responde.json())
       .then((data) => {
          const pokemonObject = {
@@ -63,9 +63,10 @@ function fetchPokemon(pokeId) {
 
 
 // Function to get data
-function displayAllPokes() {
-    for (let i = 1; i < 151; i += 1) {
-        fetchPokemon(i);
+async function displayAllPokes() {
+    for (let i = 1; i < 152; i += 1) {
+        await fetchPokemon(i);
+        console.log("teste");
     }
 }
 
