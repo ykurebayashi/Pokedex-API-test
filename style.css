@@ -27,7 +27,7 @@ li {
     border: 1px solid black;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     width: 30%;
     height: 20vh;
@@ -36,12 +36,22 @@ li {
     transition: 1s all ease;
     background-size:contain;
     background-repeat: no-repeat;
+    overflow: hidden;
 }
 
 .pokemon-pic {
     width: 50%;
+    margin-bottom: 20px;
 }
 
 li:hover {
     height: 50vh;
+    justify-content: center;
+}
+
+.pokemon-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

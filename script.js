@@ -14,9 +14,9 @@ function createPokemon(data) {
     createImg.src = data.image;
 
     // Creating the text name
-    const createName = document.createElement("p");
+    const createName = document.createElement("div");
     createName.className = "pokemon-name";
-    createName.innerHTML = data.name.charAt(0).toUpperCase() + data.name.slice(1);
+    createName.innerHTML = `<p>${data.name.charAt(0).toUpperCase() + data.name.slice(1)}</p> <h1>Pokedex Number: #${data.id}</h1>`;
 
     // Appending everything
     theList.appendChild(createLi);
@@ -56,6 +56,7 @@ async function fetchPokemon(pokeId) {
               name: data.name,
               image: data.sprites.other.home.front_default,
               type: data.types[0].type.name,
+              id: data.id,
           }
           createPokemon(pokemonObject);
       })
